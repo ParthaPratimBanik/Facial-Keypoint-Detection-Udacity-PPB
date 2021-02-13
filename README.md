@@ -1,8 +1,5 @@
 # Facial-Keypoint-Detection-Udacity-PPB
-Detecting 68 keypoints (coordinates (x,y)) of face on a dataset extracted from Youtube Faces Dataset
-
-
-It is a facial keypoint detection project launched by udacity in Computer Vision Nanodegree program.
+It is a facial keypoint detection project launched by udacity in Computer Vision Nanodegree program. Detecting 68 keypoints (coordinates (x,y)) of face on a dataset extracted from Youtube Faces Dataset.
 
 # Dataset
 The images of the dataset has been extracted from the [YouTube Faces Dataset](https://www.cs.tau.ac.il/~wolf/ytfaces/), which includes videos of people in YouTube videos. In the dataset, ther are 3462 training images and 770 test images. The output is 68 keypoints (that means (x, y) coordinates) of face images.
@@ -17,3 +14,6 @@ Generally, for regression type problem, L2Loss, known as mean square error (MSE)
 
 # Number of Epoch and Batch Size Selection
 The model is trained for 50 epochs and is checked the expected training loss level and also visualized the predicted keypoints of the images having high loss (>0.01). After several times of the experiments, it is found that, the model trains enough well within 50 epochs. In most cases, the training loss drops down from 0.5 to 0.007 in first 2 epochs, then it takes 25 more epochs to drop down to 0.0038. Finally, 16 more epochs are taked to drop down to 0.0025. For training, i have used minibatch training. The size of minibatch is 64. Experimentally, I have found that lower minibatch (from 4 to 32) is quite noisy and the training tends to overfitted. So, the batch size is set to 64.
+
+# Visualize Layers of Trained CNN Model
+Here, the filters of 1st convolutional layer of the trained CNN model is checked. Most of the filters emphaize to detect edges and they have a photonegative effect on the image where white pixels are darkened and dark pixels are whitened. Few of them creats blur effect, like gaussian filter. Few of them detects detects the texture of backgrounds.
